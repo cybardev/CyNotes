@@ -13,7 +13,7 @@ const Stack = createNativeStackNavigator();
 function App() {
   useDeviceContext(tw);
 
-  const navStyle = {
+  const navBarStyle = {
     headerStyle: tw`bg-gray-900 border-0`,
     headerTintColor: "white",
     headerTitleStyle: tw`font-bold`,
@@ -26,12 +26,12 @@ function App() {
         <NavigationContainer>
           <Stack.Navigator initialRouteName="HomePage">
             <Stack.Screen
-              options={{ ...navStyle, headerTitle: "Notes" }}
+              options={{ ...navBarStyle, headerTitle: "Notes" }}
               name="HomePage"
               component={HomeScreen}
             />
             <Stack.Screen
-              options={{ ...navStyle, headerTitle: "" }}
+              options={{ ...navBarStyle, headerTitle: "" }}
               name="EditPage"
               component={EditScreen}
             />
