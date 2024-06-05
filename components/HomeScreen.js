@@ -6,10 +6,22 @@ import AddNoteButton from "./AddNoteButton";
 import NotesGrid from "./NotesGrid";
 import SearchBar from "./SearchBar";
 
+/**
+ * Home screen of the app
+ *
+ * @component
+ * @param {Object} props component accepts navigation object as props
+ * @param {Object} props.navigation navigation object
+ * @returns rendered home screen
+ */
 function HomeScreen({ navigation }) {
   const [searchQuery, setSearchQuery] = useState("");
   const { data: searchData } = useSearchNotesQuery(searchQuery);
   const [addNote, { data: addNoteData }] = useAddNoteMutation();
+
+  /**
+   * navigate to edit page when new note is added
+   */
   useEffect(() => {
     if (addNoteData != undefined) {
       navigation.navigate("NotePage", { data: addNoteData });

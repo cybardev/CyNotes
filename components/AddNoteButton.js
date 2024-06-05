@@ -1,6 +1,14 @@
 import tw from "twrnc";
 import { TouchableOpacity, Text } from "react-native";
 
+/**
+ * Button to add a new note to DB
+ *
+ * @component
+ * @param {Object} props component accepts onPress function as props
+ * @param {Function} props.onPress function to be called when button is pressed
+ * @returns rendered button to add a new note
+ */
 function AddNoteButton({ onPress }) {
   return (
     <TouchableOpacity

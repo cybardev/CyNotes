@@ -2,6 +2,14 @@ import MasonryList from "@react-native-seoul/masonry-list";
 import tw from "twrnc";
 import NoteCard from "./NoteCard";
 
+/**
+ * Grid layout to display notes
+ *
+ * @component
+ * @param {Object} props component accepts note object and renderItem function as props
+ * @param {NoteObject[]} props.data array of note objects
+ * @returns rendered note grid
+ */
 function NotesGrid({ data }) {
   return data ? (
     <MasonryList

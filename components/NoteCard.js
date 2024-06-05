@@ -2,7 +2,18 @@ import { Text, TouchableOpacity } from "react-native";
 import { useLinkProps } from "@react-navigation/native";
 import tw from "twrnc";
 
+/**
+ * Card showing note data
+ *
+ * @component
+ * @param {Object} props component accepts note object as props
+ * @param {NoteObject} props.note note object
+ * @returns rendered note card
+ */
 function NoteCard({ note }) {
+  /**
+   * navigate to note edit page when card is pressed
+   */
   const { onPress, ...props } = useLinkProps({
     to: {
       screen: "NotePage",

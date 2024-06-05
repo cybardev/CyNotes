@@ -2,6 +2,15 @@ import { Text, TouchableOpacity } from "react-native";
 import tw from "twrnc";
 import { useDeleteNoteMutation } from "../db";
 
+/**
+ * Button to delete active note
+ *
+ * @component
+ * @param {Object} props component accepts navigation and note objects as props
+ * @param {Object} props.navigation navigation object
+ * @param {NoteObject} props.note note object
+ * @returns rendered delete button
+ */
 function DeleteButton({ navigation, note }) {
   const [deleteNote] = useDeleteNoteMutation();
 

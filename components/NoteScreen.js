@@ -4,12 +4,23 @@ import tw from "twrnc";
 import { useDeleteNoteMutation, useUpdateNoteMutation } from "../db";
 import DeleteButton from "./DeleteButton";
 
+/**
+ * Edit screen for a given note
+ *
+ * @component
+ * @param {Object} props component accepts navigation and route objects as props
+ * @param {Object} props.navigation navigation object
+ * @param {Object} props.route route object
+ * @returns rendered note edit screen
+ */
 function NoteScreen({ navigation, route }) {
   const [data, setData] = useState(route.params.data);
   const [deleteNote] = useDeleteNoteMutation();
   const [updateNote] = useUpdateNoteMutation();
 
-  // update note in DB as it is modified
+  /**
+   * update note in DB as it is modified
+   */
   useEffect(() => {
     updateNote(data);
     navigation.setOptions({
@@ -17,7 +28,9 @@ function NoteScreen({ navigation, route }) {
     });
   }, [data]);
 
-  // remove the note if it is empty when leaving edit screen
+  /**
+   * remove the note if it is empty when leaving edit screen
+   */
   useEffect(() => {
     navigation.addListener("beforeRemove", (_event) => {
       updateNote(data);
