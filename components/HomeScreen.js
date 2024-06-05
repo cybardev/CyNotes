@@ -3,7 +3,7 @@ import { View } from "react-native";
 import tw from "twrnc";
 import { useAddNoteMutation, useSearchNotesQuery } from "../db";
 import AddNoteButton from "./AddNoteButton";
-import Card from "./NoteCard";
+import NoteCard from "./NoteCard";
 import NotesGrid from "./NotesGrid";
 import SearchBar from "./SearchBar";
 
@@ -17,12 +17,13 @@ function HomeScreen({ navigation }) {
     }
   }, [addNoteData]);
 
-  const renderItem = ({ item }) => <Card note={item} navigation={navigation} />;
-
   return (
     <View style={tw`w-full h-full bg-gray-800`}>
       <SearchBar onChangeText={setSearchQuery} />
-      <NotesGrid data={searchData} renderItem={renderItem} />
+      <NotesGrid
+        data={searchData}
+        renderItem={({ item }) => <NoteCard note={item} />}
+      />
       <AddNoteButton onPress={addNote} />
     </View>
   );
