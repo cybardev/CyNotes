@@ -24,7 +24,7 @@ function HomeScreen({ navigation }) {
    */
   useEffect(() => {
     if (addNoteData != undefined) {
-      navigation.navigate("NotePage", { data: addNoteData });
+      navigation.navigate("EditPage", { data: addNoteData });
     }
   }, [addNoteData]);
 

@@ -16,7 +16,7 @@ function NoteCard({ note }) {
    */
   const { onPress, ...props } = useLinkProps({
     to: {
-      screen: "NotePage",
+      screen: "EditPage",
       params: { data: note },
     },
   });

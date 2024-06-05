@@ -13,7 +13,7 @@ import DeleteButton from "./DeleteButton";
  * @param {Object} props.route route object
  * @returns rendered note edit screen
  */
-function NoteScreen({ navigation, route }) {
+function EditScreen({ navigation, route }) {
   const [data, setData] = useState(route.params.data);
   const [deleteNote] = useDeleteNoteMutation();
   const [updateNote] = useUpdateNoteMutation();
@@ -67,4 +67,4 @@ function NoteScreen({ navigation, route }) {
   );
 }
 
-export default NoteScreen;
+export default EditScreen;

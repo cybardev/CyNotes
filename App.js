@@ -6,7 +6,7 @@ import tw, { useDeviceContext } from "twrnc";
 import { store } from "./store";
 import "react-native-reanimated";
 import HomeScreen from "./components/HomeScreen";
-import NoteScreen from "./components/NoteScreen";
+import EditScreen from "./components/EditScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -32,8 +32,8 @@ function App() {
             />
             <Stack.Screen
               options={{ ...navStyle, headerTitle: "" }}
-              name="NotePage"
-              component={NoteScreen}
+              name="EditPage"
+              component={EditScreen}
             />
           </Stack.Navigator>
         </NavigationContainer>
